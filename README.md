@@ -9,7 +9,7 @@
 - Install the Xamarin.Management.Tools package
 
  ```
- Install-Package Xamarin.Management.Tools -Version 1.0.0
+ Install-Package Xamarin.Management.Tools -Version 1.0.1
  ```
 
 ## SyncContextTracker
@@ -17,7 +17,7 @@ Track your application `SynchroniationContext` to detect deadlocks and potential
 
 - For Xamarin.Forms application
 ```C#
-    public partial class App : PrismApplication {
+    public partial class App {
 
         protected override void OnStart() =>
             SyncContextTracker.Start(SyncContextTrackerMode.ReportPotentialDeadlocks);
