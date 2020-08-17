@@ -30,6 +30,7 @@
     <PackageProjectUrl>https://github.com/Felipe.Baltazar/Xamarin.Management.Tools</PackageProjectUrl>
     <DebugType>portable</DebugType>
     <Configurations>Debug;Release</Configurations>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
