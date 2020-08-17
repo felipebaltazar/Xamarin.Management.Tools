@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="MSBuild.Sdk.Extras/2.0.54">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;Xamarin.iOS10;MonoAndroid90;</TargetFrameworks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>Xamarin.Management.Tools</AssemblyName>
+    <RootNamespace>Xamarin.Management.Tools</RootNamespace>
+    <PackageId>Xamarin.Management.Tools</PackageId>
+    <PackageIconUrl>
+    </PackageIconUrl>
+    <Summary>Cross platform application manager tools</Summary>
+    <PackageTag>xamarin,ios,android,xamarin.forms,management,tools,</PackageTag>
+    <Title>Xamarin.Management.Tools</Title>
+    <Description>Tools to manage your xamarin application</Description>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0</Version>
+    <PackageVersion>$(Version)$(VersionSuffix)</PackageVersion>
+    <Authors>Felipe Baltazar</Authors>
+    <Owners>Felipe Baltazar</Owners>
+    <RepositoryUrl>https://github.com/Felipe.Baltazar/Xamarin.Management.Tools</RepositoryUrl>
+    <DefineConstants>$(DefineConstants);</DefineConstants>
+    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/Felipe.Baltazar/Xamarin.Management.Tools</PackageProjectUrl>
+    <DebugType>portable</DebugType>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**\*.cs" />
+    <Compile Remove="Platform\**\*.cs" />
+    <Compile Remove="bin\**\*.cs" />
+    <Compile Remove="obj\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="Platform\Android\**\*.cs" />
+    <Compile Include="Platform\Xamarin\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="Platform\Apple\**\*.cs" />
+    <Compile Include="Platform\iOS\**\*.cs" />
+    <Compile Include="Platform\Xamarin\**\*.cs" />
+  </ItemGroup>
+
+</Project>
